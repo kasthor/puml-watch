@@ -1,7 +1,7 @@
 {
   "name": "@kasthor/puml-watch",
   "description": "A simple, lightweight PlantUML diagram previewer with live refresh using WebSockets."
-  "version": "1.0.0",
+  "version": "1.0.1",
   "exports": "./index.ts",
   "bin": {
     "puml-watch": "./index.ts"
