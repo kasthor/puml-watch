@@ -16,24 +16,5 @@ jobs:
         with:
           deno-version: "2.x"
       
-      - name: Get version
-        id: get_version
-        run: |
-          VERSION=$(cat deno.json | jq -r '.version')
-          echo "version=v$VERSION" >> $GITHUB_OUTPUT
-      
-      - name: Create tag
-        run: |
-          git tag ${{ steps.get_version.outputs.version }}
-          git push origin ${{ steps.get_version.outputs.version }}
-          
-      # Create GitHub release
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ steps.get_version.outputs.version }}
-          generate_release_notes: true
-          
-      # Publish to deno.land
       - name: Publish package
         run: deno publish
