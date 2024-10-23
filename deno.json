@@ -1,0 +1,19 @@
+{
+  "name": "@kasthor/puml-watch",
+  "description": "A simple, lightweight PlantUML diagram previewer with live refresh using WebSockets."
+  "version": "1.0.0",
+  "exports": "./index.ts",
+  "bin": {
+    "puml-watch": "./index.ts"
+  },
+  "tasks": {
+    "dev": "deno run --allow-read --allow-write --allow-run --allow-net --allow-env index.ts"
+  },
+  "publish": {
+    "include": [
+      "README.md",
+      "LICENSE",
+      "index.ts"
+    ]
+  }
+}
